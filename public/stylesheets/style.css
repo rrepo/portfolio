@@ -123,10 +123,10 @@ li {
   position: absolute;
   display: block;
   font-family: 'arial black';
-  font-size: 50px;
+  font-size: 60px;
   line-height: 1;
   text-align: center;
-  color:#2a2a2a;
+  color:black;
   margin-bottom: 5px;
 
   top: 50%;
