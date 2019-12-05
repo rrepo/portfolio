@@ -1,243 +1,251 @@
 extends layout
 
-
 block content
+
+  head
+    title Jade
+    script(type='text/javascript').
+      const foo = true;
+      let bar = function() {};
+      if (foo) {
+      bar(1 + 5)
+      }
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+
   body
-    #wrapper
-      header#header
-        div.heading
-          img.main_image(src='https://i.gyazo.com/5cd0d376f8733b69d07ea0345a48ab42.jpg')
-          a.logo-name(href='/') Takahashi Naduki's portfolio
-      nav#gnav
-        ul
-          li
-            //a(href='#feature') FEATURE
-          li
-            a(href='#profile') PROFILE
-          li
-            a(href='#works') WORKS
-          li
-            a(href='#skill') SKILL
-          li
-            a(href='#contact') CONTACT
-
-        section#profile.section
-          .inner
-            .section-title-block
-              h2.section-title PROFILE
-              p.section-desc
-                | 
-            .two-column-wrapper
-              .two-column-image
-                img(src='https://i.gyazo.com/273b63cece6cf662a3e29def25dda1f1.jpg', alt='')
-              .two-column-desc
-                p.text
-                  | はじめまして、高橋なづきと申します。2004年生まれの15歳です。もともとはロボット系のプログラミングをしていましたが、手軽にできるweb系のプログラミングでwebappを作りたいと思い、ruby,railsを習得し、今はexpressを勉強中です。
-                  //- br
-                  //- br
-                  //- | テキスト
-                  //- br
-                  //- br
-                  //- | テキスト
-
-        section#works.section
-          .inner
-            .section-title-block
-              h2.section-title WORKS
-              .section-desc
-                p.text
-                  | これまでの制作実績です。
-            .card-wrapper.my-gallery
-              figure.card
-                a.card-image(href='https://solfuw.herokuapp.com/', data-size='980x668')
-                  p.card-caption-title solfuw
-                  img(src='https://i.gyazo.com/4dbc4b907018b6c9e669a97adb4e2d67.png', alt='')
-                figcaption.card-caption
-                  p.card-caption-title solfuwという不登校児向け掲示板サイトです。
-                  p.card-caption-info html/css/ruby/rails/mysql
-                  p.card-caption-url
-                    a.url-link(href='https://solfuw.herokuapp.com/', target='_blank') Link
-              figure.card
-                a.card-image(href='https://hanpencult.herokuapp.com/', data-size='980x668')
-                  p.card-caption-title はんぺん教
-                  img(src='https://i.gyazo.com/ea4b8d6f96daf7f4b483203645e1288a.png', alt='')
-                figcaption.card-caption
-                  p.card-caption-title はんぺん教という架空の宗教サイトです。
-                  p.card-caption-info html/css/ruby/rails/mysql
-                  p.card-caption-url
-                    a.url-link(href='＃', target='_blank') Link
-              figure.card
-                a.card-image(href='https://discordapp.com/oauth2/authorize?client_id=575278513456939009&scope=bot&permissions=0', data-size='980x668')
-                  p.card-caption-title DisTopic
-                  img(src='https://i.gyazo.com/1f3a30c88559d0d4e77e78d0a4e385a3.png', alt='')
-                figcaption.card-caption
-                  p.card-caption-title DisTopicというdiscordで話題を振るbotです。
-                  p.card-caption-info discord.js / javascript
-                  p.card-caption-url
-                    a.url-link(href='＃', target='_blank') Link
-              figure.card
-                a.card-image(href='https://discordapp.com/oauth2/authorize?client_id=627682956441550853&scope=bot&permissions=0', data-size='980x668')
-                  p.card-caption-title DisMental
-                  img(src='https://i.gyazo.com/5339df5eff848ab337020d5aa80d53a3.png', alt='')
-                figcaption.card-caption
-                  p.card-caption-title DisMentalは心理テストを振るbotです。
-                  p.card-caption-info discord.js / javascript
-                  p.card-caption-url
-                    a.url-link(href='＃', target='_blank') Link
-              //- figure.card
-              //-   a.card-image(href='img/works/work05.jpg', data-size='980x668')
-              //-     img(src='img/works/thumb/thumb_work05.jpg', alt='')
-              //-   figcaption.card-caption
-              //-     p.card-caption-title 作品タイトル
-              //-     p.card-caption-info Design / Coding
-              //-     p.card-caption-url
-              //-       a.url-link(href='＃', target='_blank') Link
-              //- figure.card
-              //-   a.card-image(href='img/works/work06.jpg', data-size='980x668')
-              //-     img(src='img/works/thumb/thumb_work06.jpg', alt='')
-              //-   figcaption.card-caption
-              //-     p.card-caption-title 作品タイトル
-              //-     p.card-caption-info Design / Coding
-              //-     p.card-caption-url
-              //-       a.url-link(href='＃', target='_blank') Link
-        section#skill.section
-          .inner
-            .section-title-block
-              h2.section-title SKILL
-              p.section-desc
-                | まだまだわからないことだらけですが頑張ります。
-            .card-wrapper
-              .card
-                .skill-icon
-                  //img(src='img/skill/icon_skill.png', alt='')
-                .skill-desc
-                  h3.skill-desc-title HTML5/CSS3
-                  .rating
-                    p.rate.rate4
-                  p.text 上記のsolfuw，はんぺん教、このポートフォリオともにhtml/cssでフロントエンドを行っており、ある程度なら扱えます。
-              .card
-                .skill-icon
-                  //img(src='img/skill/icon_skill.png', alt='')
-                .skill-desc
-                  h3.skill-desc-title node.js/express
-                  .rating
-                    p.rate.rate3
-                  p.text 現在勉強中でまだまだわからないことが多いですが、精進して参ります。
-              .card
-                .skill-icon
-                  //img(src='img/skill/icon_skill.png', alt='')
-                .skill-desc
-                  h3.skill-desc-title ruby/rails
-                  .rating
-                    p.rate.rate4
-                  p.text 上記のはんぺん教、solfuwはruby/railsで作成しました。、ある程度なら扱えます。
-              .card
-                .skill-icon
-                  //img(src='img/skill/icon_skill.png', alt='')
-                .skill-desc
-                  h3.skill-desc-title discord.js
-                  .rating
-                    p.rate.rate4
-                  p.text 上記のDisTopic、DisMentalはDiscord.jsで作成しました。
-              
-              .card
-                .skill-icon
-                  img(src='img/skill/icon_skill.png', alt='')
-                .skill-desc
-                  h3.skill-desc-title sequelize/postgesql
-                  .rating
-                    p.rate.rate2
-                  p.text まだまだ始めたばかりでわからないことが多いですが、精進していきます。
-
-              //-   .skill-icon
-              //-     img(src='img/skill/icon_skill.png', alt='')
-              //-   .skill-desc
-              //-     h3.skill-desc-title MINDSTORMS software
-              //-     .rating
-              //-       p.rate.rate4
-              //-     p.text レゴ社が制作している、マインドストームev3のプログラミングソフトウェアです。私はマインドストームev3を使ったFLL2017という大会に出場しロボットの順位で6位にまでなったことがあります。
-              //- .card
-                //- .skill-icon
-                //-   img(src='img/skill/icon_skill.png', alt='')
-                //- .skill-desc
-                //-   h3.skill-desc-title Illustrator
-                //-   .rating
-                //-     p.rate.rate3
-                //-   p.text テキスト
-                //- .card
-
-        section#contact.section
-          .inner
-            .section-title-block
-              h2.section-title CONTACT
-              p.section-desc
-                | お問合わせは下記のSNSのDMからご連絡をください。
-            .contact-wrapper
-              .contact-list
-                ul
-                  //li
-                    a(href='#')
-                      img(src='img/contact/icon_contact.png', alt='')
-                      span.contact-list-desc フォーム
-                  li
-                    a(href='https://twitter.com/NadukiTakahashi', target='_blank')
-                      //img(src='img/contact/icon_contact.png', alt='',href='https://twitter.com/NadukiTakahashi')
-                      span.contact-list-desc(href='https://twitter.com/NadukiTakahashi') Twitter
-                  li
-                    a(href='https://www.facebook.com/po.re.71697', target='_blank')
-                      //img(src='img/contact/icon_contact.png', alt='')
-                      span.contact-list-desc Facebook
-      footer#footer
-        .inner
-          nav.footer-link
-            ul
-              li
-                a(href='#works') WORKS
-              li
-                a(href='#about') ABOUT
-              li
-                a(href='#skill') SKILL
-              li
-                a(href='#contact') CONTACT
-          p.copyright Copyright©Hanako Yamada. All Rights Reserved.
-    // Root element of PhotoSwipe. Must have class pswp.
-    .pswp(tabindex='-1', role='dialog', aria-hidden='true')
-      //
-        Background of PhotoSwipe.
-        It's a separate element as animating opacity is faster than rgba().
-      .pswp__bg
-      // Slides wrapper with overflow:hidden.
-      .pswp__scroll-wrap
-        //
-          Container that holds slides.
-          PhotoSwipe keeps only 3 of them in the DOM to save memory.
-          Don't modify these 3 pswp__item elements, data is added later on.
-        .pswp__container
-          .pswp__item
-          .pswp__item
-          .pswp__item
-        // Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed.
-        .pswp__ui.pswp__ui--hidden
-          .pswp__top-bar
-            // Controls are self-explanatory. Order can be changed.
-            .pswp__counter
-            //- button.pswp__button.pswp__button--close(title='Close (Esc)')
-            //- button.pswp__button.pswp__button--fs(title='Toggle fullscreen')
-            //- button.pswp__button.pswp__button--zoom(title='Zoom in/out')
-            // Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR
-            // element will get class pswp__preloader--active when preloader is running
-            .pswp__preloader
-              .pswp__preloader__icn
-                .pswp__preloader__cut
-                  .pswp__preloader__donut
-          .pswp__share-modal.pswp__share-modal--hidden.pswp__single-tap
-            .pswp__share-tooltip
-          //- button.pswp__button.pswp__button--arrow--left(title='Previous (arrow left)')
-          //- button.pswp__button.pswp__button--arrow--right(title='Next (arrow right)')
-          .pswp__caption
-            .pswp__caption__center
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
-    //- script(type='text/javascript', src='js/photoswipe/photoswipe.min.js')
-    //- script(type='text/javascript', src='js/photoswipe/photoswipe-ui-default.js')
-    //- script(type='text/javascript', src='js/photoswipe/photoswipe_setup.js')
-    //- script(type='text/javascript', src='js/script.js')
+   body
+     #wrapper
+       header#header
+         div.heading
+           img.main_image(src='https://i.gyazo.com/5cd0d376f8733b69d07ea0345a48ab42.jpg')
+           a.logo-name(href='/') Takahashi Naduki's portfolio
+           
+       nav#gnav
+         ul
+           li
+             //a(href='#feature') FEATURE
+           li
+             a(href='#profile') PROFILE
+           li
+             a(href='#works') WORKS
+           li
+             a(href='#skill') SKILL
+           li
+             a(href='#contact') CONTACT
+         section#profile.section
+           .inner
+             .section-title-block
+               h2.section-title PROFILE
+               p.section-desc
+                 | 
+             .two-column-wrapper
+               .two-column-image
+                 img(src='https://i.gyazo.com/273b63cece6cf662a3e29def25dda1f1.jpg', alt='')
+               .two-column-desc
+                 p.text
+                   | はじめまして、高橋なづきと申します。2004年生まれの15歳です。もともとはロボット系のプログラミングをしていましたが、手軽にできるweb系のプログラミングでwebappを作りたいと思い、ruby,railsを習得し、今はexpressを勉強中です。
+                   //- br
+                   //- br
+                   //- | テキスト
+                   //- br
+                   //- br
+                   //- | テキスト
+         section#works.section
+           .inner
+             .section-title-block
+               h2.section-title WORKS
+               .section-desc
+                 p.text
+                   | これまでの制作実績です。
+             .card-wrapper.my-gallery
+               figure.card
+                 a.card-image(href='https://solfuw.herokuapp.com/', data-size='980x668')
+                   p.card-caption-title solfuw
+                   img(src='https://i.gyazo.com/4dbc4b907018b6c9e669a97adb4e2d67.png', alt='')
+                 figcaption.card-caption
+                   p.card-caption-title solfuwという不登校児向け掲示板サイトです。
+                   p.card-caption-info html/css/ruby/rails/mysql
+                   p.card-caption-url
+                     a.url-link(href='https://solfuw.herokuapp.com/', target='_blank') Link
+               figure.card
+                 a.card-image(href='https://hanpencult.herokuapp.com/', data-size='980x668')
+                   p.card-caption-title はんぺん教
+                   img(src='https://i.gyazo.com/ea4b8d6f96daf7f4b483203645e1288a.png', alt='')
+                 figcaption.card-caption
+                   p.card-caption-title はんぺん教という架空の宗教サイトです。
+                   p.card-caption-info html/css/ruby/rails/mysql
+                   p.card-caption-url
+                     a.url-link(href='＃', target='_blank') Link
+               figure.card
+                 a.card-image(href='https://discordapp.com/oauth2/authorize?client_id=575278513456939009&scope=bot&permissions=0', data-size='980x668')
+                   p.card-caption-title DisTopic
+                   img(src='https://i.gyazo.com/1f3a30c88559d0d4e77e78d0a4e385a3.png', alt='')
+                 figcaption.card-caption
+                   p.card-caption-title DisTopicというdiscordで話題を振るbotです。
+                   p.card-caption-info discord.js / javascript
+                   p.card-caption-url
+                     a.url-link(href='＃', target='_blank') Link
+               figure.card
+                 a.card-image(href='https://discordapp.com/oauth2/authorize?client_id=627682956441550853&scope=bot&permissions=0', data-size='980x668')
+                   p.card-caption-title DisMental
+                   img(src='https://i.gyazo.com/5339df5eff848ab337020d5aa80d53a3.png', alt='')
+                 figcaption.card-caption
+                   p.card-caption-title DisMentalは心理テストを振るbotです。
+                   p.card-caption-info discord.js / javascript
+                   p.card-caption-url
+                     a.url-link(href='＃', target='_blank') Link
+               //- figure.card
+               //-   a.card-image(href='img/works/work05.jpg', data-size='980x668')
+               //-     img(src='img/works/thumb/thumb_work05.jpg', alt='')
+               //-   figcaption.card-caption
+               //-     p.card-caption-title 作品タイトル
+               //-     p.card-caption-info Design / Coding
+               //-     p.card-caption-url
+               //-       a.url-link(href='＃', target='_blank') Link
+               //- figure.card
+               //-   a.card-image(href='img/works/work06.jpg', data-size='980x668')
+               //-     img(src='img/works/thumb/thumb_work06.jpg', alt='')
+               //-   figcaption.card-caption
+               //-     p.card-caption-title 作品タイトル
+               //-     p.card-caption-info Design / Coding
+               //-     p.card-caption-url
+               //-       a.url-link(href='＃', target='_blank') Link
+         section#skill.section
+           .inner
+             .section-title-block
+               h2.section-title SKILL
+               p.section-desc
+                 | まだまだわからないことだらけですが頑張ります。
+             .card-wrapper
+               .card
+                 .skill-icon
+                   //img(src='img/skill/icon_skill.png', alt='')
+                 .skill-desc
+                   h3.skill-desc-title HTML5/CSS3
+                   .rating
+                     p.rate.rate4
+                   p.text 上記のsolfuw，はんぺん教、このポートフォリオともにhtml/cssでフロントエンドを行っており、ある程度なら扱えます。
+               .card
+                 .skill-icon
+                   //img(src='img/skill/icon_skill.png', alt='')
+                 .skill-desc
+                   h3.skill-desc-title node.js/express
+                   .rating
+                     p.rate.rate3
+                   p.text 現在勉強中でまだまだわからないことが多いですが、精進して参ります。
+               .card
+                 .skill-icon
+                   //img(src='img/skill/icon_skill.png', alt='')
+                 .skill-desc
+                   h3.skill-desc-title ruby/rails
+                   .rating
+                     p.rate.rate4
+                   p.text 上記のはんぺん教、solfuwはruby/railsで作成しました。、ある程度なら扱えます。
+               .card
+                 .skill-icon
+                   //img(src='img/skill/icon_skill.png', alt='')
+                 .skill-desc
+                   h3.skill-desc-title discord.js
+                   .rating
+                     p.rate.rate4
+                   p.text 上記のDisTopic、DisMentalはDiscord.jsで作成しました。
+           
+               .card
+                 .skill-icon
+                   //img(src='img/skill/icon_skill.png', alt='')
+                 .skill-desc
+                   h3.skill-desc-title sequelize/postgesql
+                   .rating
+                     p.rate.rate2
+                   p.text まだまだ始めたばかりでわからないことが多いですが、精進していきます。
+               //-   .skill-icon
+               //-     img(src='img/skill/icon_skill.png', alt='')
+               //-   .skill-desc
+               //-     h3.skill-desc-title MINDSTORMS software
+               //-     .rating
+               //-       p.rate.rate4
+               //-     p.text レゴ社が制作している、マインドストームev3のプログラミングソフトウェアです。私はマインドストームev3を使ったFLL2017という大会に出場しロボットの順位で6位にまでなったことがあります。
+               //- .card
+                 //- .skill-icon
+                 //-   img(src='img/skill/icon_skill.png', alt='')
+                 //- .skill-desc
+                 //-   h3.skill-desc-title Illustrator
+                 //-   .rating
+                 //-     p.rate.rate3
+                 //-   p.text テキスト
+                 //- .card
+         section#contact.section
+           .inner
+             .section-title-block
+               h2.section-title CONTACT
+               p.section-desc
+                 | お問合わせは下記のSNSのDMからご連絡をください。
+             .contact-wrapper
+               .contact-list
+                 ul
+                   //li
+                     a(href='#')
+                       img(src='img/contact/icon_contact.png', alt='')
+                       span.contact-list-desc フォーム
+                   li
+                     a(href='https://twitter.com/NadukiTakahashi', target='_blank')
+                       //img(src='img/contact/icon_contact.png', alt='',href='https://twitter.com/NadukiTakahashi')
+                       span.contact-list-desc(href='https://twitter.com/NadukiTakahashi') Twitter
+                   li
+                     a(href='https://www.facebook.com/po.re.71697', target='_blank')
+                       //img(src='img/contact/icon_contact.png', alt='')
+                       span.contact-list-desc Facebook
+       footer#footer
+         .inner
+           nav.footer-link
+             ul
+               li
+                 a(href='#works') WORKS
+               li
+                 a(href='#about') ABOUT
+               li
+                 a(href='#skill') SKILL
+               li
+                 a(href='#contact') CONTACT
+           p.copyright Copyright©Hanako Yamada. All Rights Reserved.
+     // Root element of PhotoSwipe. Must have class pswp.
+     .pswp(tabindex='-1', role='dialog', aria-hidden='true')
+       //
+         Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba().
+       .pswp__bg
+       // Slides wrapper with overflow:hidden.
+       .pswp__scroll-wrap
+         //
+           Container that holds slides.
+           PhotoSwipe keeps only 3 of them in the DOM to save memory.
+           Don't modify these 3 pswp__item elements, data is added later on.
+         .pswp__container
+           .pswp__item
+           .pswp__item
+           .pswp__item
+         // Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed.
+         .pswp__ui.pswp__ui--hidden
+           .pswp__top-bar
+             // Controls are self-explanatory. Order can be changed.
+             .pswp__counter
+             //- button.pswp__button.pswp__button--close(title='Close (Esc)')
+             //- button.pswp__button.pswp__button--fs(title='Toggle fullscreen')
+             //- button.pswp__button.pswp__button--zoom(title='Zoom in/out')
+             // Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR
+             // element will get class pswp__preloader--active when preloader is running
+             .pswp__preloader
+               .pswp__preloader__icn
+                 .pswp__preloader__cut
+                   .pswp__preloader__donut
+           .pswp__share-modal.pswp__share-modal--hidden.pswp__single-tap
+             .pswp__share-tooltip
+           //- button.pswp__button.pswp__button--arrow--left(title='Previous (arrow left)')
+           //- button.pswp__button.pswp__button--arrow--right(title='Next (arrow right)')
+           .pswp__caption
+             .pswp__caption__center
+     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+     //- script(type='text/javascript', src='js/photoswipe/photoswipe.min.js')
+     //- script(type='text/javascript', src='js/photoswipe/photoswipe-ui-default.js')
+     //- script(type='text/javascript', src='js/photoswipe/photoswipe_setup.js')
+     //- script(type='text/javascript', src='js/script.js')
